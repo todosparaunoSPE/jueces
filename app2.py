@@ -11,12 +11,8 @@ import pandas as pd
 import spacy
 import random
 
-# Cargar el modelo de spaCy
-#nlp = spacy.load('en_core_web_sm')
-
-
-# Cargar el modelo usando la ruta que obtuviste
-nlp = spacy.load("C:/Users/jperezr/.conda/envs/felix/Lib/site-packages/en_core_web_sm")
+import subprocess
+subprocess.call(["python", "install_models.py"])
 
 def evaluar_contenido(texto):
     # Lógica para evaluar el contenido

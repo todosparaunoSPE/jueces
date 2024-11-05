@@ -12,7 +12,20 @@ import spacy
 import random
 
 # Cargar el modelo de spaCy
-nlp = spacy.load('en_core_web_sm')
+#nlp = spacy.load('en_core_web_sm')
+
+
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    print("El modelo 'en_core_web_sm' no está instalado. Instalándolo...")
+    import os
+    os.system("python -m spacy download en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+
+
+
+
 
 def evaluar_contenido(texto):
     # Lógica para evaluar el contenido

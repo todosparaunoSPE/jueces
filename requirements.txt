@@ -2,6 +2,6 @@ streamlit
 PyPDF2
 pandas 
 spacy
-en-core-web-sm
+
 
 

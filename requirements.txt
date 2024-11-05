@@ -1,5 +1,5 @@
 streamlit
-PdfReader
+PyPDF2
 pandas 
 spacy
 

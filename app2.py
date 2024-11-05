@@ -15,18 +15,7 @@ import subprocess
 import sys
 
 # Cargar el modelo de spaCy
-#nlp = spacy.load('en_core_web_sm')
-
-
-def install_spacy_model(model_name):
-    try:
-        spacy.load(model_name)
-    except OSError:
-        print(f"Instalando el modelo {model_name}...")
-        subprocess.check_call([sys.executable, '-m', 'spacy', 'download', model_name])
-
-install_spacy_model("en_core_web_sm")
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load('en_core_web_sm')
 
 
 

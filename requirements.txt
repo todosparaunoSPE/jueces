@@ -1,1 +1,5 @@
-
+streamlit as st
+PdfReader
+pandas as pd
+spacy
+random

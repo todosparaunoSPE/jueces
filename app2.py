@@ -16,7 +16,7 @@ import subprocess
 subprocess.call(["python", "install_models.py"])
 
 # Cargar el modelo de spaCy
-nlp = spacy.load('en_core_web_sm')
+#nlp = spacy.load('en_core_web_sm')
 
 
 

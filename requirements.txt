@@ -1,5 +1,5 @@
-streamlit as st
+streamlit
 PdfReader
-pandas as pd
+pandas 
 spacy
 random

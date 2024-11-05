@@ -12,7 +12,13 @@ import spacy
 import random
 
 import subprocess
+
 subprocess.call(["python", "install_models.py"])
+
+# Cargar el modelo de spaCy
+nlp = spacy.load('en_core_web_sm')
+
+
 
 def evaluar_contenido(texto):
     # Lógica para evaluar el contenido

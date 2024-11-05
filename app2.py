@@ -11,18 +11,22 @@ import pandas as pd
 import spacy
 import random
 
+import subprocess
+import sys
+
 # Cargar el modelo de spaCy
 #nlp = spacy.load('en_core_web_sm')
 
 
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    print("El modelo 'en_core_web_sm' no está instalado. Instalándolo...")
-    import os
-    os.system("python -m spacy download en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
+def install_spacy_model(model_name):
+    try:
+        spacy.load(model_name)
+    except OSError:
+        print(f"Instalando el modelo {model_name}...")
+        subprocess.check_call([sys.executable, '-m', 'spacy', 'download', model_name])
 
+install_spacy_model("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm")
 
 
 

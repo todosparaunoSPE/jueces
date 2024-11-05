@@ -10,26 +10,14 @@ from PyPDF2 import PdfReader
 import pandas as pd
 import spacy
 import random
+from spacy.cli import download  # Importar download
 
-# Estilo de fondo
-page_bg_img = """
-<style>
-[data-testid="stAppViewContainer"]{
-background:
-radial-gradient(black 15%, transparent 16%) 0 0,
-radial-gradient(black 15%, transparent 16%) 8px 8px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-background-color:#282828;
-background-size:16px 16px;
-</style>
-"""
-
-st.markdown(page_bg_img, unsafe_allow_html=True)
-
-
-# Cargar el modelo de spaCy
-nlp = spacy.load('en_core_web_sm')
+# Intentar cargar el modelo de spaCy
+try:
+    nlp = spacy.load('en_core_web_sm')
+except OSError:
+    download('en_core_web_sm')  # Descargar el modelo si no está instalado
+    nlp = spacy.load('en_core_web_sm')  # Cargar el modelo después de la descarga
 
 def evaluar_contenido(texto):
     # Lógica para evaluar el contenido
@@ -83,30 +71,8 @@ def main():
 
     # Sidebar con sección de ayuda
     st.sidebar.markdown("## Ayuda")
-    st.sidebar.markdown("""
-    ### Evaluación de Ensayos Judiciales
-    Esta aplicación permite evaluar ensayos judiciales en formato PDF mediante un sistema de calificación basado en cinco criterios: Contenido, Estructura, Estilo, Originalidad e Impacto. Los ensayos son analizados utilizando técnicas de procesamiento de lenguaje natural (NLP) para generar calificaciones y seleccionar los mejores candidatos.
+    st.sidebar.markdown(""" ... """)  # Mantén el contenido de la ayuda
 
-    #### ¿Cómo Funciona?
-    1. **Carga de Archivos PDF**: Los usuarios pueden cargar uno o varios archivos PDF que contienen los ensayos que desean evaluar.
-    2. **Extracción de Texto**: El texto se extrae de cada archivo PDF utilizando la biblioteca `PyPDF2`.
-    3. **Evaluación del Ensayo**: Cada ensayo se evalúa según cinco criterios:
-        - **Contenido**: Evaluación de palabras clave relevantes.
-        - **Estructura**: Análisis de la cohesión del texto.
-        - **Estilo**: Longitud media de las oraciones y diversidad léxica.
-        - **Originalidad**: Identificación de frases clichés.
-        - **Impacto**: Presencia de elementos persuasivos.
-    4. **Cálculo de Calificaciones**: Se suman las calificaciones de cada criterio para obtener una calificación total y un promedio.
-    5. **Resultados**: Los resultados se muestran en una tabla con calificaciones.
-    6. **Guardar Resultados**: Puedes guardar los resultados en un archivo Excel.
-
-    #### Requisitos
-    - Python 3.x
-    - Bibliotecas: `streamlit`, `PyPDF2`, `pandas`, `spacy`
-    - Asegúrate de tener el modelo de spaCy (`en_core_web_sm`) instalado.
-    """)
-
-    # Resto de tu código para carga y evaluación de ensayos
     uploaded_files = st.file_uploader("Cargar archivos PDF", accept_multiple_files=True)
     
     # Procesar archivos y evaluar ensayos

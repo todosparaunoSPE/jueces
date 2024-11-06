@@ -1,7 +1,7 @@
 streamlit
 PyPDF2
 pandas 
-spacy==3.5.0  
+spacy==3.8.0  
 
 
 

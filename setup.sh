@@ -11,6 +11,11 @@ enableCORS=false\n\
 \n\
 " > ~/.streamlit/config.toml
 
-# Instalar el modelo en_core_web_sm de spaCy
+# Instalar spaCy
 pip install spacy
+
+# Descargar el modelo de spaCy
 python -m spacy download en_core_web_sm
+
+# Para que funcione en el entorno de Streamlit, debemos vincular el modelo descargado
+python -c "import spacy; spacy.cli.link('en_core_web_sm', 'en', force=True)"

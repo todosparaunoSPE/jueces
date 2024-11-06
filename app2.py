@@ -12,25 +12,13 @@ import pandas as pd
 import spacy
 import random
 
-import os
-import subprocess
-
-# Instalar spaCy y el modelo si no están instalados
-try:
-    import spacy
-except ImportError:
-    subprocess.check_call([os.sys.executable, "-m", "pip", "install", "spacy"])
-    subprocess.check_call([os.sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
-
-# Ahora puedes cargar el modelo de spaCy
 import spacy
 nlp = spacy.load("en_core_web_sm")
 
 
 
-
 # Cargar el modelo de spaCy
-nlp = spacy.load("en_core_web_sm")
+#nlp = spacy.load("en_core_web_sm")
 
 
 # Cargar el modelo usando la ruta que obtuviste

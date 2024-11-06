@@ -2,7 +2,7 @@ streamlit
 PyPDF2
 pandas 
 spacy==3.5.0
-en-core-web-sm
+en-core-web-sm=3.5.0
 
 
 

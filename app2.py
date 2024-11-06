@@ -6,7 +6,7 @@ Created on Tue Nov  5 12:19:27 2024
 """
 
 import en_core_web_sm
-nlp = en_core_web_sm.load()
+
 
 import streamlit as st
 from PyPDF2 import PdfReader
@@ -20,7 +20,7 @@ import random
 
 
 # Cargar el modelo de spaCy
-#nlp = spacy.load('en_core_web_sm')
+nlp = spacy.load('en_core_web_sm')
 
 
 # Cargar el modelo usando la ruta que obtuviste

@@ -13,7 +13,7 @@ import random
 
 import subprocess
 
-subprocess.call(["python", "install_models.py"])
+#subprocess.call(["python", "install_models.py"])
 
 
 # Cargar el modelo de spaCy

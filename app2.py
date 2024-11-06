@@ -5,19 +5,25 @@ Created on Tue Nov  5 12:19:27 2024
 @author: jperezr
 """
 
+import subprocess
+
+# Ejecutar el script que instala el modelo
+subprocess.call(["python", "install_models.py"])
+
+
+
 import streamlit as st
 from PyPDF2 import PdfReader
 import pandas as pd
 import spacy
 import random
 
-import subprocess
 
-subprocess.call(["python", "install_models.py"])
+
 
 
 # Cargar el modelo de spaCy
-#nlp = spacy.load('en_core_web_sm')
+nlp = spacy.load('en_core_web_sm')
 
 
 # Cargar el modelo usando la ruta que obtuviste

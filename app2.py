@@ -5,10 +5,6 @@ Created on Tue Nov  5 12:19:27 2024
 @author: jperezr
 """
 
-#import subprocess
-
-#subprocess.call(["python", "install_models.py"])
-
 import en_core_web_sm
 nlp = en_core_web_sm.load()
 
@@ -21,11 +17,7 @@ import random
 
 
 
-#subprocess.call(["python", "install_models.py"])
 
-
-# Cargar el modelo de spaCy
-#nlp = spacy.load('en_core_web_sm')
 
 
 # Cargar el modelo usando la ruta que obtuviste

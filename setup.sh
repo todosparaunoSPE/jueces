@@ -1,3 +1,6 @@
+#!/bin/bash
+
+# Configurar Streamlit
 mkdir -p ~/.streamlit/
 
 echo "\
@@ -8,6 +11,6 @@ enableCORS=false\n\
 \n\
 " > ~/.streamlit/config.toml
 
-pip install en_core_web_sm
+# Instalar el modelo en_core_web_sm de spaCy
+pip install spacy
 python -m spacy download en_core_web_sm
-
